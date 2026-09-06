@@ -3,16 +3,29 @@
   "name": "Reading Time Tracker",
   "version": "0.2.0",
   "description": "Tracks time spent browsing and breaks it down by category (Social Media, Studying, Entertainment, Work, Other).",
-  "permissions": ["tabs", "storage", "idle", "alarms", "notifications"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "tabs",
+    "storage",
+    "idle",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "background": {
     "service_worker": "background.js",
     "type": "module"
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["content-script.js"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content-script.js"
+      ],
       "run_at": "document_idle"
     }
   ],
