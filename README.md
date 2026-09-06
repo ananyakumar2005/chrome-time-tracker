@@ -32,14 +32,12 @@ A Chrome extension (Manifest V3) that tracks active browsing time per domain and
 
 ## Application Preview
 
-![image](screenshots/popup.png)
-*Pop-up view of extension*
+|  |
+| :--- |
+| <img src="screenshots/popup.png" width="300" alt="Pop-up view of extension" /><br>*Pop-up view of extension* |
+| <img src="screenshots/categories.png" width="300" alt="Categories page view" /><br>*Categories page view* |
+| <img src="screenshots/goals.png" width="300" alt="Daily goals editor" /><br>*Daily goals editor* |
 
-![image](screenshots/categories.png)
-*Categories page view*
-
-![image](screenshots/goals.png)
-*Daily goals editor*
 
 ## File Structure
 
