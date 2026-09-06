@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Time Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <span class="brand-title">Reading Time</span>
+      </div>
+
+      <div class="range-toggle" role="group" aria-label="Time range">
+        <button type="button" data-range="1" class="range-btn active">Today</button>
+        <button type="button" data-range="7" class="range-btn">Week</button>
+        <button type="button" data-range="30" class="range-btn">Month</button>
+      </div>
+    </header>
+
+    <!-- Live Active Session Pill (shown if currently tracking) -->
+    <div id="live-session" class="live-session hidden">
+      <span class="live-pulse"></span>
+      <span class="live-label">Tracking:</span>
+      <span id="live-domain" class="live-domain">example.com</span>
+      <span id="live-timer" class="live-timer">0s</span>
+    </div>
+
+    <!-- Donut Chart & Overview Card -->
+    <div class="overview-card">
+      <div class="chart-wrapper">
+        <svg id="donut-svg" viewBox="0 0 160 160" class="donut-chart" aria-label="Category breakdown chart">
+          <!-- Background track -->
+          <circle cx="80" cy="80" r="62" class="donut-bg"></circle>
+          <!-- Dynamic segments rendered by JS -->
+          <g id="donut-segments"></g>
+        </svg>
+        <div class="donut-center-text">
+          <span class="total-label">Total Time</span>
+          <span id="total-time" class="total-value">0m</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Breakdown Bars -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2 class="section-title">Categories</h2>
+        <span id="category-summary" class="section-meta">0 active</span>
+      </div>
+      <div id="category-bars" class="category-bars"></div>
+    </div>
+
+    <!-- Top Sites -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2 class="section-title">Top Sites</h2>
+        <span class="section-meta">Active time</span>
+      </div>
+      <ul id="domain-list" class="domain-list"></ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="#" id="open-options" class="options-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span>Manage & Settings</span>
+      </a>
+    </footer>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
