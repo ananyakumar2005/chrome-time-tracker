@@ -30,6 +30,17 @@ A Chrome extension (Manifest V3) that tracks active browsing time per domain and
 4. Select the `reading-time-tracker/` folder.
 5. Pin the extension to your toolbar. Browse web pages, and click the extension icon to view your live stats!
 
+## Application Preview
+
+![image](screenshots/popup.png)
+*Pop-up view of extension*
+
+![image](screenshots/categories.png)
+*Categories page view*
+
+![image](screenshots/goals.png)
+*Daily goals editor*
+
 ## File Structure
 
 ```
